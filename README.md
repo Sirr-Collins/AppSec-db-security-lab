@@ -257,7 +257,7 @@ The screenshots below show the requests and responses from the practical exercis
 Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Sirr-Collins/AppSec-db-security-lab.git
 ```
 
 Move into the project directory:
