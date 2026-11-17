@@ -7,10 +7,7 @@ from database import get_connection
 app = Flask(__name__)
 
 
-# ==========================================
 # VULNERABLE LOGIN ENDPOINT
-# ==========================================
-
 @app.route("/vulnerable/login", methods=["POST"])
 def vulnerable_login():
 
@@ -42,10 +39,8 @@ def vulnerable_login():
     }), 401
 
 
-# ==========================================
-# SECURE LOGIN ENDPOINT
-# ==========================================
 
+# SECURE LOGIN ENDPOINT
 @app.route("/secure/login", methods=["POST"])
 def secure_login():
 
@@ -71,7 +66,7 @@ def secure_login():
 
     connection.close()
 
-    # Verify the supplied password against the stored hash.
+    # Verifies the supplied password against the stored hash.
     if user and check_password_hash(
         user["password_hash"], password
     ):
@@ -85,15 +80,8 @@ def secure_login():
     }), 401
 
 
-# ==========================================
-# APPLICATION ENTRY POINT
-# ==========================================
 
-
-
-
-
-
+# VULNERABLE SEARCH ENDPOINT
 @app.route("/vulnerable/search", methods=["POST"])
 def vulnerable_search():
 
@@ -124,7 +112,7 @@ def vulnerable_search():
 
 
 
-
+#SECURE SEARCH ENDPOINT
 @app.route("/secure/search", methods=["POST"])
 def secure_search():
 
@@ -160,3 +148,6 @@ def secure_search():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
